@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emagreça 360 — Página Oficial</title>
   <meta name="description" content="E-book Emagreça 360: método prático para perder gordura comendo bem. Acesso imediato em PDF. Pagamento via Pix e Cartão (Cakto)." />
+  <!-- Meta Pixel Base -->
+  <script>
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    })(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '791694973831155');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id=791694973831155&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Base -->
   <style>
     :root { --bg:#0B0B0B; --panel:#151515; --muted:#1E1E1E; --text:#F2F2F2; --sub:#B5B5B5; --accent:#00E5C3; --accent-2:#26F0A8; }
     *{box-sizing:border-box}
@@ -166,7 +184,7 @@
         <h2 style="margin:8px 0 2px">Leve o e‑book + bônus hoje</h2>
         <div class="value">R$ 29,90</div>
         <p style="color:var(--sub); margin-top:8px">Garantia de satisfação de 7 dias • Compra segura na Cakto</p>
-        <a class="pill" href="https://pay.cakto.com.br/bxz4zge_598479" aria-label="Ir para checkout da Cakto" style="margin-top:10px;display:inline-flex">Comprar agora</a>
+        <a class="pill" id="btn-checkout" href="https://pay.cakto.com.br/bxz4zge_598479" aria-label="Ir para checkout da Cakto" style="margin-top:10px;display:inline-flex">Comprar agora</a>
       </div>
     </section>
 
@@ -208,5 +226,34 @@
       </div>
     </div>
   </footer>
+
+  <!-- Event tracking -->
+  <script>
+    // ViewContent when #comprar enters viewport
+    (function(){
+      const target = document.querySelector('#comprar');
+      if (target && 'IntersectionObserver' in window && typeof fbq === 'function') {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              fbq('track', 'ViewContent', {content_name: 'Emagreça 360 - Secao Compra'});
+              obs.disconnect();
+            }
+          });
+        }, {threshold: 0.4});
+        obs.observe(target);
+      }
+    })();
+
+    // InitiateCheckout on checkout button click
+    (function(){
+      const btn = document.getElementById('btn-checkout');
+      if (btn && typeof fbq === 'function') {
+        btn.addEventListener('click', function(){
+          try { fbq('track', 'InitiateCheckout', {value: 29.90, currency: 'BRL'}); } catch(e) {}
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
