@@ -2,9 +2,11 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Emagreça 360 — Página Oficial</title>
   <meta name="description" content="E-book Emagreça 360: método prático para perder gordura comendo bem. Acesso imediato em PDF. Pagamento via Pix e Cartão (Cakto)." />
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+  <link rel="stylesheet" href="styles.css" />
   <!-- Meta Pixel Base -->
   <script>
     !(function(f,b,e,v,n,t,s){
@@ -19,115 +21,70 @@
     fbq('track', 'PageView');
   </script>
   <noscript>
-    <img height="1" width="1" style="display:none" 
+    <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=791694973831155&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Base -->
-  <style>
-    :root { --bg:#0B0B0B; --panel:#151515; --muted:#1E1E1E; --text:#F2F2F2; --sub:#B5B5B5; --accent:#00E5C3; --accent-2:#26F0A8; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1200px,92vw);margin-inline:auto}
-    header{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.75);backdrop-filter:blur(8px);border-bottom:1px solid #111;padding:10px 0}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-family:Montserrat,Inter,system-ui,sans-serif;font-weight:800;letter-spacing:.4px}
-    .pill{background:var(--accent);color:#0B0B0B;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:0 0 0 0 rgba(0,229,195,.5);transition:transform .12s ease,box-shadow .3s}
-    .pill:hover{transform:translateY(-1px);box-shadow:0 0 0 8px rgba(0,229,195,.06)}
-    .ghost{border:1px solid #2a2a2a;background:transparent;color:var(--text);padding:10px 14px;border-radius:12px}
-
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;padding:48px 0}
-    .badge{display:inline-flex;gap:8px;align-items:center;background:linear-gradient(90deg,#0f0f0f,#121212);border:1px solid #232323;color:var(--sub);padding:8px 12px;border-radius:999px;font-size:13px}
-    h1{font-family:Montserrat,Inter,sans-serif;font-size:clamp(28px,4vw,48px);line-height:1.1;margin:10px 0 14px}
-    .lead{color:var(--sub);font-size:clamp(16px,2.2vw,19px)}
-    .bullets{display:grid;gap:10px;margin:18px 0}
-    .bullets li{list-style:none;display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid #202020;padding:10px 12px;border-radius:12px}
-    .price{display:flex;align-items:center;gap:14px;margin:18px 0}
-    .price .value{font-weight:900;font-size:28px;color:var(--accent)}
-    .trust{display:flex;gap:12px;flex-wrap:wrap;color:var(--sub);font-size:13px}
-    .hero-media{background:radial-gradient(600px 200px at 30% -10%, rgba(0,229,195,.25), transparent 60%), radial-gradient(700px 200px at 100% 120%, rgba(38,240,168,.18), transparent 60%);padding:26px;border-radius:20px;border:1px solid #202020}
-    .hero-media .frame{background:var(--muted);border:1px solid #262626;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
-
-    section{padding:56px 0;border-top:1px solid #101010}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--panel);border:1px solid #222;border-radius:16px;padding:18px}
-    .card h3{margin:8px 0}
-    .chip{display:inline-block;padding:6px 10px;border:1px solid #2a2a2a;border-radius:999px;color:var(--sub);font-size:12px}
-
-    .features{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
-
-    .cta-block{background:linear-gradient(180deg,#0E0E0E,#141414);border:1px solid #212121;border-radius:18px;padding:24px;text-align:center}
-    .cta-block .value{font-size:36px;font-weight:900;color:var(--accent)}
-
-    details{background:var(--panel);border:1px solid #212121;border-radius:12px;padding:12px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:700}
-
-    footer{padding:36px 0;color:var(--sub);border-top:1px solid #101010}
-
-    @media (max-width: 920px){
-      .hero, .features{grid-template-columns:1fr}
-    }
-  </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
+    <div class="container nav" role="navigation" aria-label="Navegação principal">
       <div class="brand">Emagreça 360</div>
-      <nav style="display:flex;gap:10px;align-items:center">
+      <div class="nav-actions">
         <a class="ghost" href="#beneficios">Benefícios</a>
         <a class="ghost" href="#conteudo">Conteúdo</a>
-        <a class="pill" href="#comprar">Comprar agora — R$ 29,90</a>
-      </nav>
+        <a class="pill" href="#comprar" aria-label="Ir para a seção de compra">Comprar agora — R$ 29,90</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <div>
-        <span class="badge">PDF • Acesso imediato • Pagamento via Pix e Cartão (Cakto)</span>
-        <h1>Emagreça 360: o método prático para perder gordura comendo bem</h1>
-        <p class="lead">Guia direto ao ponto para mulheres 40+ emagrecerem com saúde, sem passar fome e sem promessas milagrosas.</p>
-        <ul class="bullets">
-          <li>✔️ Monte pratos que dão <strong>saciedade</strong> e cabem na sua rotina.</li>
-          <li>✔️ Destrave <strong>platôs</strong> com ajustes simples e sustentáveis.</li>
-          <li>✔️ <strong>Lanches</strong>, cardápios e listas de compras para a vida real.</li>
-        </ul>
-        <div class="price">
-          <div class="value">R$ 29,90</div>
-          <a class="pill" id="comprar-top" href="#comprar">Quero o Emagreça 360</a>
+    <section class="hero">
+      <div class="container grid hero-grid">
+        <div>
+          <span class="badge">PDF • Acesso imediato • Pix e Cartão (Cakto)</span>
+          <h1>Emagreça 360: o método prático para perder gordura comendo bem</h1>
+          <p class="lead">Guia direto ao ponto para mulheres 40+ emagrecerem com saúde, sem passar fome e sem promessas milagrosas.</p>
+          <ul class="bullets">
+            <li>✔️ Monte pratos que dão <strong>saciedade</strong> e cabem na sua rotina.</li>
+            <li>✔️ Destrave <strong>platôs</strong> com ajustes simples e sustentáveis.</li>
+            <li>✔️ <strong>Lanches</strong>, cardápios e listas de compras para a vida real.</li>
+          </ul>
+          <div class="price">
+            <div class="value">R$ 29,90</div>
+            <a class="pill btn-pulse" href="#comprar" aria-label="Ir para a seção de compra">Quero o Emagreça 360</a>
+          </div>
+          <div class="trust" aria-label="Sinais de confiança">
+            <span>Compra segura na Cakto</span> •
+            <span>Garantia 7 dias</span> •
+            <span>Leitura no celular, tablet e computador</span>
+          </div>
         </div>
-        <div class="trust">
-          <span>Compra segura na Cakto</span>·
-          <span>Garantia 7 dias</span>·
-          <span>Leitura no celular, tablet e computador</span>
-        </div>
-      </div>
-      <div class="hero-media">
-        <div class="frame">
-          <img src="https://cdn.abacus.ai/images/23e5abbd-40be-409b-bc28-13fda84a0080.png" alt="Capa do e-book Emagreça 360" />
+        <div class="hero-media glow" aria-hidden="true">
+          <div class="media-frame">
+            <img src="https://cdn.abacus.ai/images/23e5abbd-40be-409b-bc28-13fda84a0080.png" alt="Capa do e-book Emagreça 360" loading="eager" />
+          </div>
         </div>
       </div>
     </section>
 
     <section id="beneficios">
       <div class="container">
-        <h2 style="font-family:Montserrat,Inter,sans-serif; font-size:32px; margin:0 0 16px">De → Para</h2>
-        <div class="grid-3">
-          <div class="card"><span class="chip">Fome constante</span><h3>Saciedade diária</h3><p style="color:var(--sub)">Estratégias simples para sentir menos fome e manter o déficit sem sofrimento.</p></div>
-          <div class="card"><span class="chip">Platôs</span><h3>Progresso consistente</h3><p style="color:var(--sub)">Checklist anti-platô em ordem de prioridade e sem loucura.</p></div>
-          <div class="card"><span class="chip">8 ou 80</span><h3>80/20 que funciona</h3><p style="color:var(--sub)">Flexibilidade real para a vida adulta e social.</p></div>
+        <h2 class="h2">De → Para</h2>
+        <div class="grid grid-3">
+          <div class="card"><span class="chip">Fome constante</span><h3 class="h3">Saciedade diária</h3><p class="muted">Estratégias simples para sentir menos fome e manter o déficit sem sofrimento.</p></div>
+          <div class="card"><span class="chip">Platôs</span><h3 class="h3">Progresso consistente</h3><p class="muted">Checklist anti-platô em ordem de prioridade e sem loucura.</p></div>
+          <div class="card"><span class="chip">8 ou 80</span><h3 class="h3">80/20 que funciona</h3><p class="muted">Flexibilidade real para a vida adulta e social.</p></div>
         </div>
       </div>
     </section>
 
     <section id="conteudo">
-      <div class="container features">
+      <div class="container grid features">
         <div>
-          <h2 style="font-family:Montserrat,Inter,sans-serif; font-size:32px; margin-top:0">O que você recebe</h2>
+          <h2 class="h2">O que você recebe</h2>
           <div class="card" style="margin-bottom:12px">
-            <ul style="margin:0 0 0 18px; line-height:1.7">
+            <ul class="ul">
               <li>Fundamentos do déficit “sem sofrimento”.</li>
               <li>Prato 40/30/30 — templates visuais e exemplos.</li>
               <li>Lista de compras e trocas inteligentes.</li>
@@ -137,17 +94,15 @@
               <li>Sono e estresse: guia rápido para controlar a fome.</li>
             </ul>
           </div>
-          <div class="grid-3">
-            <div class="card"><strong>Bônus 1</strong><p style="color:var(--sub)">2 cardápios de 7 dias (onívoro e vegetariano)</p></div>
-            <div class="card"><strong>Bônus 2</strong><p style="color:var(--sub)">Planilha simples de cardápios (Google Sheets)</p></div>
-            <div class="card"><strong>Bônus 3</strong><p style="color:var(--sub)">Checklist semanal imprimível</p></div>
+          <div class="grid grid-3">
+            <div class="card"><strong>Bônus 1</strong><p class="muted">2 cardápios de 7 dias (onívoro e vegetariano)</p></div>
+            <div class="card"><strong>Bônus 2</strong><p class="muted">Planilha simples de cardápios (Google Sheets)</p></div>
+            <div class="card"><strong>Bônus 3</strong><p class="muted">Checklist semanal imprimível</p></div>
           </div>
         </div>
-        <div>
-          <div class="card">
-            <div style="border-radius:14px; overflow:hidden; border:1px solid #262626; background:var(--muted)">
-              <img src="https://cdn.abacus.ai/images/a81245b7-bd7f-497b-997d-d66b0f99674a.png" alt="Mockup do e-book Emagreça 360" />
-            </div>
+        <div class="card" style="align-self:start">
+          <div class="frame-muted">
+            <img src="https://cdn.abacus.ai/images/a81245b7-bd7f-497b-997d-d66b0f99674a.png" alt="Mockup do e-book Emagreça 360" loading="lazy" />
           </div>
         </div>
       </div>
@@ -155,25 +110,25 @@
 
     <section>
       <div class="container">
-        <h2 style="font-family:Montserrat,Inter,sans-serif; font-size:32px; margin:0 0 16px">Para quem é / não é</h2>
-        <div class="grid-3">
+        <h2 class="h2">Para quem é / não é</h2>
+        <div class="grid grid-3">
           <div class="card">
-            <h3>Para quem é</h3>
-            <ul style="margin:0 0 0 18px; line-height:1.8; color:var(--sub)">
+            <h3 class="h3">Para quem é</h3>
+            <ul class="ul muted">
               <li>Mulheres 40+ que querem emagrecer comendo comida de verdade.</li>
               <li>Quem busca clareza, saciedade e consistência.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Para quem não é</h3>
-            <ul style="margin:0 0 0 18px; line-height:1.8; color:var(--sub)">
+            <h3 class="h3">Para quem não é</h3>
+            <ul class="ul muted">
               <li>Quem busca promessas rápidas e soluções milagrosas.</li>
               <li>Quem não pretende ajustar hábitos básicos.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Como funciona a compra</h3>
-            <p style="color:var(--sub)">Pagamento processado pela <strong>Cakto</strong> (Pix ou Cartão de crédito). Liberação imediata do PDF após confirmação, por e‑mail e link em tela.</p>
+            <h3 class="h3">Como funciona a compra</h3>
+            <p class="muted">Pagamento processado pela <strong>Cakto</strong> (Pix ou Cartão de crédito). Liberação imediata do PDF após confirmação, por e‑mail e link em tela.</p>
           </div>
         </div>
       </div>
@@ -181,45 +136,30 @@
 
     <section id="comprar">
       <div class="container cta-block">
-        <h2 style="margin:8px 0 2px">Leve o e‑book + bônus hoje</h2>
-        <div class="value">R$ 29,90</div>
-        <p style="color:var(--sub); margin-top:8px">Garantia de satisfação de 7 dias • Compra segura na Cakto</p>
-        <a class="pill" id="btn-checkout" href="https://pay.cakto.com.br/bxz4zge_598479" aria-label="Ir para checkout da Cakto" style="margin-top:10px;display:inline-flex">Comprar agora</a>
+        <h2 class="h2" style="margin:0 0 .3rem">Leve o e‑book + bônus hoje</h2>
+        <div class="cta-value">R$ 29,90</div>
+        <p class="muted" style="margin:.5rem 0 1rem">Garantia de satisfação de 7 dias • Compra segura na Cakto</p>
+        <a class="pill" id="btn-checkout" href="https://pay.cakto.com.br/bxz4zge_598479" aria-label="Ir para checkout da Cakto">Comprar agora</a>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <h2 style="font-family:Montserrat,Inter,sans-serif; font-size:32px; margin:0 0 16px">Perguntas frequentes</h2>
-        <details>
-          <summary>Como recebo o e‑book?</summary>
-          <p style="color:var(--sub)">Imediatamente após a confirmação do pagamento. Você recebe um link por e‑mail e também vê na tela.</p>
-        </details>
-        <details>
-          <summary>Consigo ler no celular?</summary>
-          <p style="color:var(--sub)">Sim. O PDF funciona no celular, tablet e computador.</p>
-        </details>
-        <details>
-          <summary>Preciso de ingredientes caros?</summary>
-          <p style="color:var(--sub)">Não. A lista de compras é acessível e flexível.</p>
-        </details>
-        <details>
-          <summary>Serve para menopausa/50+?</summary>
-          <p style="color:var(--sub)">Sim. O foco é saciedade, proteína e hábitos sustentáveis, ideais para 40+.</p>
-        </details>
-        <details>
-          <summary>E se eu não gostar?</summary>
-          <p style="color:var(--sub)">Você tem 7 dias para solicitar reembolso integral.</p>
-        </details>
-        <p style="color:var(--sub); margin-top:18px">Aviso legal: material educativo; não substitui acompanhamento individual. Resultados variam.</p>
+        <h2 class="h2">Perguntas frequentes</h2>
+        <details class="faq"><summary><span class="caret">›</span> Como recebo o e‑book?</summary><div class="faq-body">Imediatamente após a confirmação do pagamento. Você recebe um link por e‑mail e também vê na tela.</div></details>
+        <details class="faq"><summary><span class="caret">›</span> Consigo ler no celular?</summary><div class="faq-body">Sim. O PDF funciona no celular, tablet e computador.</div></details>
+        <details class="faq"><summary><span class="caret">›</span> Preciso de ingredientes caros?</summary><div class="faq-body">Não. A lista de compras é acessível e flexível.</div></details>
+        <details class="faq"><summary><span class="caret">›</span> Serve para menopausa/50+?</summary><div class="faq-body">Sim. O foco é saciedade, proteína e hábitos sustentáveis, ideais para 40+.</div></details>
+        <details class="faq"><summary><span class="caret">›</span> E se eu não gostar?</summary><div class="faq-body">Você tem 7 dias para solicitar reembolso integral.</div></details>
+        <p class="muted" style="margin-top:1rem">Aviso legal: material educativo; não substitui acompanhamento individual. Resultados variam.</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+    <div class="container foot">
       <div>© Emagreça 360</div>
-      <div style="display:flex;gap:12px">
+      <div class="links">
         <a href="/politica-de-privacidade.html">Política de Privacidade</a>
         <a href="/termos-de-uso.html">Termos de Uso</a>
         <a href="/contato.html">Contato</a>
@@ -227,33 +167,11 @@
     </div>
   </footer>
 
-  <!-- Event tracking -->
-  <script>
-    // ViewContent when #comprar enters viewport
-    (function(){
-      const target = document.querySelector('#comprar');
-      if (target && 'IntersectionObserver' in window && typeof fbq === 'function') {
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              fbq('track', 'ViewContent', {content_name: 'Emagreça 360 - Secao Compra'});
-              obs.disconnect();
-            }
-          });
-        }, {threshold: 0.4});
-        obs.observe(target);
-      }
-    })();
+  <div class="float-cta" aria-hidden="true">
+    <a href="#comprar" class="pill" id="float-buy">Comprar</a>
+    <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
+  </div>
 
-    // InitiateCheckout on checkout button click
-    (function(){
-      const btn = document.getElementById('btn-checkout');
-      if (btn && typeof fbq === 'function') {
-        btn.addEventListener('click', function(){
-          try { fbq('track', 'InitiateCheckout', {value: 29.90, currency: 'BRL'}); } catch(e) {}
-        });
-      }
-    })();
-  </script>
+  <script src="app.js" defer></script>
 </body>
 </html>
